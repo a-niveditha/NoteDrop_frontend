@@ -1,33 +1,79 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-	content: [
-		"./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-		"./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-		"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-	],
-	theme: {
-		extend: {
-			//add other properties to in the extend object to add extra util classes to tailwind
-			//sample colors
-			colors: {
-				background: "var(--background)",
-				foreground: "var(--foreground)",
-				slotBookDateColor: "#3E3E3E",
-				slotBookDateColorHover: "#1E1E1E",
-				slotBookTime: "#1E1E1E",
-				slotBookTimeGreen: "#30D158",
-				slotBookTimeRed: "#FF453A",
-			},
-			//custom breakpoints for better responsive design
-			screens: {
-				mobile: "320px",
-				tab: "768px",
-				laptopS: "1024px",
-				laptopM: "1440px",
-			},
-		},
-	},
-	plugins: [],
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+
+  theme: {
+    extend: {
+      colors: {
+        border: "var(--border)",
+        input: "var(--input)",
+        ring: "var(--ring)",
+
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+
+        primary: {
+          DEFAULT: "var(--primary)",
+          foreground: "var(--primary-foreground)",
+        },
+
+        secondary: {
+          DEFAULT: "var(--secondary)",
+          foreground: "var(--secondary-foreground)",
+        },
+
+        destructive: {
+          DEFAULT: "var(--destructive)",
+          foreground: "var(--destructive-foreground)",
+        },
+
+        muted: {
+          DEFAULT: "var(--muted)",
+          foreground: "var(--muted-foreground)",
+        },
+
+        accent: {
+          DEFAULT: "var(--accent)",
+          foreground: "var(--accent-foreground)",
+        },
+
+        popover: {
+          DEFAULT: "var(--popover)",
+          foreground: "var(--popover-foreground)",
+        },
+
+        card: {
+          DEFAULT: "var(--card)",
+          foreground: "var(--card-foreground)",
+        },
+
+        chocolate: "#aa570e",
+        darkslate: "#075057",
+        linen: "#f5f1e6",
+        gainsboro: "#e2ded5",
+      },
+
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "var(--radius)",
+        sm: "var(--radius)",
+      },
+
+      screens: {
+        mobile: "320px",
+        tab: "768px",
+        laptopS: "1024px",
+        laptopM: "1440px",
+      },
+    },
+  },
+
+  plugins: [require("tailwindcss-animate")],
 };
+
 export default config;
